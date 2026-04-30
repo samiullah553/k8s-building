@@ -22,3 +22,11 @@ spec:
       image: nginx:latest
       ports:
       - containerPort: 80
+    volumeMounts:
+    - mountPath: 
+        path: /var/www/html
+	name: my-app-volume
+    volumes:
+      - name: my-app-volume
+      persistentVolumeClaim:
+        cliamName: local-pvc

@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-app-service
+  namespace: my-app
+
+spec:
+  selectors:
+    app: my-app
+    
+  ports:
+    protocol: tcp
+    port: 80  #port to expose for external users
+    targetPort: 80 #pod port
+  type: ClusterIp   
